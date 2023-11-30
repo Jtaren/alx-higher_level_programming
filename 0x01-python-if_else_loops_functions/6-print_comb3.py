@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-for first_number in range(0, 10):
-    for second_number in range(first_number + 1, 10):
-        if first_number == 8 and second_number == 9:
-            print("{}{}".format(first_number, second_number))
+# Author - Godswill Kalu
+
+for digit1 in range(0, 10):
+    for digit2 in range(digit1 + 1, 10):
+        if digit1 == 8 and digit2 == 9:
+            print("{}{}".format(digit1, digit2))
         else:
-            print("{}{}, ".format(first_number, second_number), end=''))
+            print("{}{}".format(digit1, digit2), end=", ")
