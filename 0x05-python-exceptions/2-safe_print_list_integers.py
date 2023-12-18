@@ -1,19 +1,13 @@
 #!/usr/bin/python3
 
 def safe_print_list_integers(my_list=[], x=0):
-  """
-  Prints the first x integers from a list on the same line, skipping non-integers.
-
-  Args:
-    my_list: The list to print integers from.
-    x: The number of elements to access (can be larger than the list length).
-
-  Returns:
-    The number of integers actually printed.
-
-  Raises:
-    IndexError: If x is larger than the list length.
-  """
+    """Print the first x elements of a list that are integers.
+    Args:
+        my_list (list): The list to print elements from.
+        x (int): The number of elements of my_list to print.
+    Returns:
+        The number of elements printed.
+    """
 
   printed_count = 0
   for i in range(0, x):
