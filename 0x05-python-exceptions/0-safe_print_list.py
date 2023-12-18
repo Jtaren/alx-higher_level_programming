@@ -11,15 +11,11 @@ def safe_print_list(my_list=[], x=0):
   """
 
   printed_count = 0
-  for i, element in enumerate(my_list):
+  for i in range(x):
     try:
-      print(element, end="")
+      print("{}".format(my_list[i]), end="")
       printed_count += 1
-      if printed_count == x:
+    except IndexError:
         break
-    except TypeError:
-      # Ignore elements that can't be printed
-      pass
-
-  print()  # Print a newline at the end
-  return printed_count
+  print("")
+  return (printed_count)
