@@ -16,14 +16,12 @@ def safe_print_list_integers(my_list=[], x=0):
   """
 
   printed_count = 0
-  for i in range(x):
+  for i in range(0, x):
     try:
-      if isinstance(my_list[i], int):
         print("{:d}".format(my_list[i]), end="")
         printed_count += 1
-    except IndexError:
-      # Reached the end of the list before printing x elements
-      break
+    except (ValueError,TypeError):
+        continue
 
-  print()  # Print a newline at the end
-  return printed_count
+  print("")
+  return (printed_count)
