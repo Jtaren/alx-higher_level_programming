@@ -1,10 +1,11 @@
-#!/usr/bin/python#
+#!/usr/bin/python3
 """Defines a Rectangle class."""
+
 
 class Rectangle:
     """Represent a rectangle."""
 
-    def __init(self, width=0, height=0):
+    def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
 
         Args:
@@ -24,7 +25,7 @@ class Rectangle:
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
-            raise ValueError("width must be >- 0")
+            raise ValueError("width must be >= 0")
         self.__width = value
 
     @property
@@ -37,7 +38,7 @@ class Rectangle:
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
-            raise TypeError("height must be >= 0")
+            raise ValueError("height must be >= 0")
         self.__height = value
 
     def area(self):
@@ -53,7 +54,8 @@ class Rectangle:
     def __str__(self):
         """Return the printable representation of the Rectangle.
 
-        Represents the rectangle with the # character."""
+        Represents the rectangle with the # character.
+        """
         if self.__width == 0 or self.__height == 0:
             return ("")
 
@@ -67,10 +69,9 @@ class Rectangle:
     def __repr__(self):
         """Return the string representation of the Rectangle."""
         rect = "Rectangle(" + str(self.__width)
-        rect += ", "+ str(self.__height + ")"
+        rect += ", " + str(self.__height) + ")"
         return (rect)
 
     def __del__(self):
-    """Print a message for every deletion of a Rectangle."""
-    print("Bye rectangle...")
-
+        """Print a message for every deletion of a Rectangle."""
+        print("Bye rectangle...")
