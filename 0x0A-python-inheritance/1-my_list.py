@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+"""
+contains the MyList class
+"""
 
-"""contains the MyList class"""
 
 class MyList(list):
     """a subclass of list"""
