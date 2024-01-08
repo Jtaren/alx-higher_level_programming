@@ -1,15 +1,18 @@
-#!/usr/bin/python3
-"""
-contains the MyList class
-"""
-
+#!/usr/bin/pyton3
 
 class MyList(list):
-    """a subclass of list"""
-    def __init__(self):
-        """initializes the object"""
-        super().__init__()
+  """
+  MyList class inherits from list and adds a print_sorted method.
 
-    def print_sorted(self):
-        """prints the sorted list"""
-        print(sorted(self))
+  Attributes:
+      (inherited from list)
+
+  Methods:
+      print_sorted(): Prints the list elements sorted in ascending order.
+  """
+
+  def print_sorted(self):
+    """
+    Prints the list elements sorted in ascending order.
+    """
+    print(f"Sorted list: {sorted(self)}")
