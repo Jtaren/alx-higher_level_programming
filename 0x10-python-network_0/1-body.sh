@@ -1,3 +1,3 @@
 #!/bin/bash
-# send a GET request to an URL with curl, and display the body of the response
-curl -s -L -X GET "$1"
+# Script that shows the response body redirecting /route_1
+curl -Ls "$1"
