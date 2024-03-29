@@ -1,21 +1,20 @@
 #!/usr/bin/python3
-"""Sends a POST request to a given URL with a given email.
-Usage: ./2-post_email.py <URL> <email>
-  - Displays the body of the response.
+"""
+Takes in a URL and an email, sends a POST request,
+and displays the body of the response.
 """
 
-import sys
-import urllib.parse
-import urllib.request
 
+from urllib import request, parse
+import sys
 
 if __name__ == "__main__":
     url = sys.argv[1]
     email = sys.argv[2]
 
-    data = urllib.parse.urlencode({'email': email})
-    data = data.encode('utf-8')
+    data = parse.urlencode({'email': email}).encode('utf-8')
+    req = request.Request(url, data=data, method='POST')
 
-    req = urllib.request.Request(url, data=data, method='POST')
-    with urllib.request.urlopen(req) as response:
-        print(response.read().decode('utf-8'))
+    with request.urlopen(req) as response:
+        body = response.read().decode('utf-8')
+        print(body)
